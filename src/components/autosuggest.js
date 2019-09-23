@@ -1,32 +1,29 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
+import Theme from './autosuggest.css'
 
 const languages = [
   {
     name: 'anmol',
-    year: 1972
   },
   {
     name: 'aman',
-    year: 2012
   },
   {
     name: 'nagar',
-    year: 1972
   },
   {
     name: 'kawal',
-    year: 1972
   },
   {
     name: 'dicky',
-    year: 1972
   },
   {
     name: 'sachin',
-    year: 1972
   },
 ];
+
+
 const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
@@ -36,12 +33,14 @@ const getSuggestions = value => {
   );
 };
 
+
+
 const getSuggestionValue = suggestion => suggestion.name;
 
 // Use your imagination to render suggestions.
 const renderSuggestion = suggestion => (
-  <div>
-    {suggestion.name}
+  <div className='container a2'>
+    <div className='a3'>{suggestion.name}</div>
   </div>
 );
 
@@ -54,7 +53,7 @@ class AutoSuggestion extends Component {
       suggestions: []
     };
 
-    onChange = (event, { newValue }) => {
+  onChange = (event, { newValue }) => {
        this.setState({
          value: newValue
        });
@@ -73,6 +72,8 @@ class AutoSuggestion extends Component {
         });
       };
 
+
+
   render(){
 
     const { value, suggestions } = this.state;
@@ -84,9 +85,11 @@ class AutoSuggestion extends Component {
       onChange: this.onChange
     };
 
-    return <div>
+    return <div className='text-center a1 container-fluid'>
+
     <Autosuggest
-    className='text-center'
+        theme={Theme}
+        className='a1'
         suggestions={suggestions}
         onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested={this.onSuggestionsClearRequested}
