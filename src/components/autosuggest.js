@@ -1,26 +1,65 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
-import Theme from './autosuggest.css'
+import theme from './autosuggest.css'
 
-const languages = [
+const City = [
   {
-    name: 'anmol',
+    name: 'Mumbai',
+
   },
   {
-    name: 'aman',
+    name: 'Delhi',
+
   },
   {
-    name: 'nagar',
+    name: 'Bangalore',
+
   },
   {
-    name: 'kawal',
+    name: 'Hyderabad',
+
   },
   {
-    name: 'dicky',
+    name: 'Ahmedabad',
+
   },
   {
-    name: 'sachin',
+    name: 'Chennai',
+
   },
+  {
+    name: 'Kolkata',
+
+  },
+  {
+    name: 'Surat',
+
+  },
+  {
+    name: 'Pune',
+
+  },
+  {
+    name: 'Jaipur',
+
+  },
+  {
+    name: 'Lucknow',
+
+  },
+  {
+    name: 'Kanpur',
+
+  },
+  {
+    name: 'Nagpur',
+
+  },
+  {
+    name: 'Indore',
+
+  },
+
 ];
 
 
@@ -28,8 +67,8 @@ const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
-  return inputLength === 0 ? [] : languages.filter(lang =>
-    lang.name.toLowerCase().slice(0, inputLength) === inputValue
+  return inputLength === 0 ? [] : City.filter( city =>
+    city.name.toLowerCase().slice(0, inputLength) === inputValue
   );
 };
 
@@ -38,65 +77,56 @@ const getSuggestions = value => {
 const getSuggestionValue = suggestion => suggestion.name;
 
 // Use your imagination to render suggestions.
-const renderSuggestion = suggestion => (
-  <div className='container a2'>
-    <div className='a3'>{suggestion.name}</div>
-  </div>
-);
+
+    const renderSuggestion = suggestion => (
+
+    <div className='a1'>{suggestion.name}</div>
+    );
 
 
 
 class AutoSuggestion extends Component {
 
-  state = {
-      value: '',
-      suggestions: []
+    state = {
+    value: '',
+    suggestions: []
     };
 
-  onChange = (event, { newValue }) => {
-       this.setState({
-         value: newValue
-       });
-     };
+    onChange = (event, { newValue }) => {
+    this.setState({
+    value: newValue
+    });
+    };
 
 
-     onSuggestionsFetchRequested = ({ value }) => {
-        this.setState({
-          suggestions: getSuggestions(value)
-        });
-      };
+    onSuggestionsFetchRequested = ({ value }) => {
+    this.setState({
+    suggestions: getSuggestions(value)
+    });
+    };
 
-      onSuggestionsClearRequested = () => {
-        this.setState({
-          suggestions: []
-        });
-      };
+    onSuggestionsClearRequested = () => {
+    this.setState({
+    suggestions: []
+    });
+    };
 
 
 
   render(){
+    const value = this.state.value
+    const inputProps = { placeholder: 'type a city name',value, onChange: this.onChange };
 
-    const { value, suggestions } = this.state;
-
-    // Autosuggest will pass through all these props to the input.
-    const inputProps = {
-      placeholder: 'Type a programming language',
-      value,
-      onChange: this.onChange
-    };
-
-    return <div className='text-center a1 container-fluid'>
-
+    return <div className='text-center'>
     <Autosuggest
-        theme={Theme}
-        className='a1'
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        inputProps={inputProps}
-      />
+        theme = {theme}
+        suggestions = {this.state.suggestions}
+        onSuggestionsFetchRequested = {this.onSuggestionsFetchRequested}
+        onSuggestionsClearRequested = {this.onSuggestionsClearRequested}
+        getSuggestionValue = {getSuggestionValue}
+        renderSuggestion = {renderSuggestion}
+        inputProps = {inputProps}  />
+
           </div>
   }
 
