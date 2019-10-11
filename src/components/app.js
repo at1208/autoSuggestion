@@ -1,10 +1,10 @@
 import React from 'react';
-import Heading from './heading'
+
 import AutoSuggest from './autosuggest.js';
 
 const App = () => {
-  return <div className='container-fluid'>
-     <Heading />
+  return <div className=''>
+
      <AutoSuggest />
         </div>
 }

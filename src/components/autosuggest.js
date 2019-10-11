@@ -1,65 +1,224 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
-import theme from './autosuggest.css'
+import './autosuggest.css'
 
 const City = [
   {
-    name: 'Mumbai',
+    name: 'Ajwain Butter Salt Cookies',
 
   },
   {
-    name: 'Delhi',
+    name: 'Besan Khatai',
 
   },
   {
-    name: 'Bangalore',
+    name: 'Biscotti',
 
   },
   {
-    name: 'Hyderabad',
+    name: 'Coconut Khatai',
 
   },
   {
-    name: 'Ahmedabad',
+    name: 'Honey Oats Cookies',
 
   },
   {
-    name: 'Chennai',
+    name: 'Milk Ajwain Cookies',
 
   },
   {
-    name: 'Kolkata',
+    name: 'Milk Badam Cookies',
 
   },
   {
-    name: 'Surat',
+    name: 'Milk Coconut Cookies',
 
   },
   {
-    name: 'Pune',
+    name: 'Milk Pista Flake Cookies',
 
   },
   {
-    name: 'Jaipur',
+    name: 'Pista Milk Cookies',
 
   },
   {
-    name: 'Lucknow',
+    name: 'Nankhatai',
 
   },
   {
-    name: 'Kanpur',
+    name: 'Choco Crunchy Cookies',
 
   },
   {
-    name: 'Nagpur',
+    name: 'Butter Jeera Cookies',
 
   },
   {
-    name: 'Indore',
+    name: 'French Hearts',
 
   },
+  {
+    name: 'Chocolate Kaju Cookies',
 
+  },
+  {
+    name: 'Kaju Pista Cookies',
+
+  },
+  {
+    name: 'Choco Chips Cookies ',
+
+  },
+  {
+    name: 'White Forest Cake',
+
+  },
+  {
+    name: 'Black Forest Cake',
+
+  },
+  {
+    name: 'Blueberry Cake',
+
+  },
+  {
+    name: 'Choco Chip Cake',
+
+  },
+  {
+    name: 'Fresh Fruit Cake',
+
+  },
+  {
+    name: 'Pineapple Cake',
+
+  },
+  {
+    name: 'Choco Truffle Cake',
+
+  },
+  {
+    name: 'Choco Delight Cake',
+
+  },
+  {
+    name: 'Muffins',
+
+  },
+  {
+    name: 'Chocolate Lolipop',
+
+  },
+  {
+    name: 'Red Velvet Pastry',
+
+  },
+  {
+    name: 'Truffle Nuts Pudding',
+
+  },
+  {
+    name: 'Walnut Pie',
+
+  },
+  {
+    name: 'Pineapple Pastry',
+
+  },
+  {
+    name: 'Black Forest Pastry',
+
+  },
+  {
+    name: 'Choco Truffle Pastry',
+
+  },
+  {
+    name: 'Muddy Chocolate Roll',
+
+  },
+  {
+    name: 'Butter Scotch Pastry',
+
+  },
+  {
+    name: 'Melting Brownie',
+
+  },
+  {
+    name: 'Blueberry Pastry',
+
+  },
+  {
+    name: 'Brownie Lava',
+
+  },
+  {
+    name: 'Blueberry Pie',
+
+  },
+  {
+    name: 'Milk Bread',
+
+  },
+  {
+    name: 'Garlic Bread',
+
+  },
+  {
+    name: 'Pao Bun',
+
+  },
+  {
+    name: 'Kulcha Bun',
+
+  },
+  {
+    name: 'Cake Rusk',
+
+  },
+  {
+    name: 'Veg Sandwich',
+
+  },
+  {
+    name: 'Paneer Stuff Kulcha ',
+
+  },
+  {
+    name: 'Doughnuts',
+
+  },
+  {
+    name: 'Cheese Burger',
+
+  },
+  {
+    name: 'Ajwain Puff ',
+
+  },
+  {
+      name: 'Methi Twister',
+
+    },
+    {
+      name: 'Mix Veg Roll ',
+
+    },
+    {
+      name: 'Paneer Stuff Hotdog',
+
+    },
+    {
+      name: 'Paneer Tikka Roll ',
+
+    },
+    {
+      name: 'Pizza Bite ',
+
+    }
 ];
 
 
@@ -67,8 +226,8 @@ const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
-  return inputLength === 0 ? [] : City.filter( city =>
-    city.name.toLowerCase().slice(0, inputLength) === inputValue
+  return inputLength === 0 ? [] : City.filter( food =>
+    food.name.toLowerCase().slice(0, inputLength) === inputValue
   );
 };
 
@@ -76,7 +235,7 @@ const getSuggestions = value => {
 
 const getSuggestionValue = suggestion => suggestion.name;
 
-// Use your imagination to render suggestions.
+
 
     const renderSuggestion = suggestion => (
 
@@ -115,11 +274,13 @@ class AutoSuggestion extends Component {
 
   render(){
     const value = this.state.value
-    const inputProps = { placeholder: 'type a city name',value, onChange: this.onChange };
+    const inputProps = { placeholder: '',value, onChange: this.onChange };
 
-    return <div className='text-center'>
+    return <div className=''>
+
+
     <Autosuggest
-        theme = {theme}
+
         suggestions = {this.state.suggestions}
         onSuggestionsFetchRequested = {this.onSuggestionsFetchRequested}
         onSuggestionsClearRequested = {this.onSuggestionsClearRequested}
@@ -127,6 +288,8 @@ class AutoSuggestion extends Component {
         renderSuggestion = {renderSuggestion}
         inputProps = {inputProps}  />
 
+
+ 
           </div>
   }
 
