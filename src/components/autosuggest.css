@@ -1,13 +1,12 @@
 .react-autosuggest__input{
-  font-size: 30px;
+ font-size: 26px;
   height: 40px;
   text-align: center;
- 
-
+  width: auto;
 }
 .a1{
 font-weight: bold;
-color: black;
+color: #212121;
 
 
 }
@@ -16,16 +15,16 @@ color: black;
   font-size: 20px;
 }
 .react-autosuggest__container{
-
+ text-align: center;
 }
 .react-autosuggest__container--open{
-
+   text-align: center;
 
 }
 .react-autosuggest__suggestions-container{
 
 
-
+   text-align: left;
   width: auto;
   margin-top: 30px;
 
@@ -35,10 +34,12 @@ color: black;
 }
 .react-autosuggest__suggestions-list{
   list-style: none;
+   text-align: left;
 
 
 }
 .react-autosuggest__suggestion{
   background-color: white;
+     text-align: left;
 
 }

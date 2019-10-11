@@ -274,7 +274,7 @@ class AutoSuggestion extends Component {
 
   render(){
     const value = this.state.value
-    const inputProps = { placeholder: '',value, onChange: this.onChange };
+    const inputProps = { placeholder: 'Search food',value, onChange: this.onChange };
 
     return <div className=''>
 
@@ -289,7 +289,7 @@ class AutoSuggestion extends Component {
         inputProps = {inputProps}  />
 
 
- 
+
           </div>
   }
 
