@@ -1,11 +1,11 @@
 import React from 'react';
 
-import AutoSuggest from './autosuggest.js';
+import Home from './home.js';
 
 const App = () => {
   return <div className=''>
 
-     <AutoSuggest />
+     <Home />
         </div>
 }
 export default App;

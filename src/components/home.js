@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Autosuggest from 'react-autosuggest';
-import './autosuggest.css'
+import './home.css';
+import Sidebar from "react-sidebar";
+
 
 const City = [
   {
@@ -239,12 +241,12 @@ const getSuggestionValue = suggestion => suggestion.name;
 
     const renderSuggestion = suggestion => (
 
-    <div className='a1'>{suggestion.name}</div>
+    <div className='a1 container'>{suggestion.name}</div>
     );
 
 
 
-class AutoSuggestion extends Component {
+class Home extends Component {
 
     state = {
     value: '',
@@ -294,4 +296,4 @@ class AutoSuggestion extends Component {
   }
 
 }
-export default AutoSuggestion;
+export default Home;
